@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>MudaPcs - Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: "Montserrat", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #2f2f2f;
+      color: #e0f0ff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1, h2 {
+      color: #ffffff;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #c9e4ff;
+      line-height: 1.6;
+    }
+
+    nav {
+      width: 100vw;
+      background-color: #3d5a80;
+      padding: 15px 0;
+      box-shadow: 0 0 10px #2b3d52cc;
+      box-sizing: border-box;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 40px;
+      padding: 0 20px;
+    }
+
+    .nav-container a {
+      color: #dbeeff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-container a:hover {
+      color: #ffffff;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 32px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .content {
+      flex-grow: 1;
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .hero {
+      margin-bottom: 40px;
+    }
+
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #3d5a80;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      text-align: center;
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+    }
+
+    .card a {
+      color: #ffffff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .card a:hover {
+      color: #c9e4ff;
+    }
+
+    .support-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .support-card a {
+      margin-top: 10px;
+    }
+
+    form {
+      margin-top: 40px;
+      background: #3d5a80;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: left;
+      box-sizing: border-box;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    form button {
+      background-color: #2f2f2f;
+      color: #ffffff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #1f1f1f;
+    }
+
+    footer {
+      width: 100vw;
+      background-color: #3d5a80;
+      padding: 15px 0;
+      color: #e0f0ff;
+      text-align: center;
+      box-shadow: 0 0 10px #2b3d52cc;
+      box-sizing: border-box;
+    }
+
+    footer a {
+      margin: 0 10px;
+      color: #dbeeff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <a href="gamingpcs.html">GamingPcs</a>
+      <a href="about.html">About</a>
+      <a href="index.html" class="logo">Muda Pcs</a>
+      <a href="contact.html">Contact</a>
+      <a href="tracking.html">Tracking</a>
+    </div>
+  </nav>
+
+  <div class="content">
+    <div class="hero">
+      <h1>Get in Touch</h1>
+      <p>We’re here to answer your questions and provide support.</p>
+    </div>
+
+    <div class="contact-cards">
+      <div class="card">
+        <h2>General Inquiries</h2>
+        <p>Questions about our gaming PCs, partnerships, or services?</p>
+        <a href="mailto:mudapcs@gmail.com">mudapcs@gmail.com</a>
+      </div>
+      <div class="card support-card">
+        <h2>Customer Support</h2>
+        <p>Need help with your order, warranty, or troubleshooting?</p>
+        <a href="mailto:mudapcsassistance@gmail.com">mudapcsassistance@gmail.com</a>
+      </div>
+    </div>
+
+    <!-- General Inquiry Form -->
+    <form action="https://formsubmit.co/mudapcs@gmail.com" method="POST">
+      <h2>General Inquiry</h2>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <input type="hidden" name="_subject" value="New General Inquiry">
+      <input type="hidden" name="_next" value="https://7e86f27b-d3c5-4472-8c62-3451a7e8cc14-00-33s89uvvb0w89.janeway.replit.dev/thankyou.html">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="text" name="_honey" style="display:none">
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Customer Support Form -->
+    <form action="https://formsubmit.co/mudapcsassistance@gmail.com" method="POST">
+      <h2>Customer Support</h2>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Support Request" required></textarea>
+      <input type="hidden" name="_subject" value="New Customer Support Request">
+      <input type="hidden" name="_next" value="https://7e86f27b-d3c5-4472-8c62-3451a7e8cc14-00-33s89uvvb0w89.janeway.replit.dev/thankyou.html">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="text" name="_honey" style="display:none">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <footer>
+    <a href="warranty.html">Warranty</a>
+    <a href="returns.html">Refunds/Returns</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </footer>
+
+</body>
+</html>

@@ -1,16 +1,135 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8" />
+  <title>MudaPcs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: "Montserrat", sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #2f2f2f; /* Dark Gray */
+      color: #e0f0ff; /* Light Blue-Gray Text */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h1 {
+      color: #ffffff;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #c9e4ff; /* Soft Blue-Gray Text */
+      line-height: 1.5;
+    }
+
+    /* Navigation Bar Full Width */
+    nav {
+      width: 100vw;
+      background-color: #3d5a80; /* Medium Blue */
+      padding: 15px 0;
+      box-shadow: 0 0 10px #2b3d52cc;
+      box-sizing: border-box;
+    }
+
+    .nav-container {
+      max-width: 1200px; /* content stays centered */
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 40px;
+      padding: 0 20px;
+    }
+
+    .nav-container a {
+      color: #dbeeff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-container a:hover {
+      color: #ffffff;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 32px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    /* Main content */
+    .content {
+      flex-grow: 1;
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    /* Footer Full Width */
+    footer {
+      width: 100vw;
+      background-color: #3d5a80;
+      padding: 15px 0;
+      color: #e0f0ff;
+      text-align: center;
+      box-shadow: 0 0 10px #2b3d52cc;
+      box-sizing: border-box;
+    }
+
+    footer a {
+      margin: 0 10px;
+      color: #dbeeff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+    }
+  </style>
 </head>
 
 <body>
-  Hello world
-  <script src="script.js"></script>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="nav-container">
+      <a href="gamingpcs.html">GamingPcs</a>
+      <a href="about.html">About</a>
+      <a href="index.html" class="logo">Muda Pcs</a>
+      <a href="contact.html">Contact</a>
+      <a href="tracking.html">Tracking</a>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="content">
+    <h1>Price to Performance + Aesthetics = Your Next PC</h1>
+    <p>Blah blah blah</p>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <a href="warranty.html">Warranty</a>
+    <a href="returns.html">Refunds/Returns</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </footer>
+
 </body>
 
 </html>

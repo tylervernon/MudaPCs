@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Gaming PCs | MudaPcs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #2f2f2f; /* Dark Gray */
+      color: #e0f0ff; /* Light Blue-Gray Text */
+      font-family: "Montserrat", sans-serif;
+      display: flex;
+      flex-direction: column;
+    }
+
+    h2, .logo {
+      font-weight: 700;
+    }
+
+    nav {
+      background-color: #3d5a80;
+      padding: 15px 30px;
+      box-shadow: 0 0 10px #2b3d52cc;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .nav-container a {
+      color: #dbeeff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-container a:hover {
+      color: #ffffff;
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px;
+      align-items: flex-start; /* Align all products at top */
+      flex: 1;
+    }
+
+    .product {
+      display: flex;
+      justify-content: center;
+    }
+
+    .product-inner {
+      width: 300px;
+      background-color: #3b3b3b;
+      border: 2px solid #00bfff; /* Blue border */
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: transform 0.3s;
+    }
+
+    .product-inner:hover {
+      transform: scale(1.03);
+    }
+
+    .product-inner img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .product-inner h2 {
+      margin: 0;
+      font-size: 18px;
+      color: #ffffff;
+    }
+
+    .product-inner p {
+      margin: 5px 0;
+      color: #c9e4ff;
+    }
+
+    .product-inner a {
+      color: #00bfff;
+      text-decoration: none;
+    }
+
+    .product-inner a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #3d5a80;
+      padding: 15px 20px;
+      text-align: center;
+      border-top: 1px solid #2b3d52;
+      color: #e0f0ff;
+      box-shadow: 0 0 10px #2b3d52cc;
+    }
+
+    footer a {
+      margin: 0 10px;
+      color: #dbeeff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="nav-container">
+      <a href="gamingpcs.html">GamingPcs</a>
+      <a href="about.html">About</a>
+      <a href="index.html" class="logo">Muda Pcs</a>
+      <a href="contact.html">Contact</a>
+      <a href="tracking.html">Tracking</a>
+    </div>
+  </nav>
+
+  <!-- Product Grid Section -->
+  <div class="product-grid">
+
+    <!-- Product 1 -->
+    <div class="product">
+      <div class="product-inner">
+        <a href="monarch.html">
+          <img src="MyPc.png" alt="Monarch Gaming PC">
+          <h2>Monarch</h2>
+        </a>
+        <p>$499</p>
+        <p>GPU: RTX 2060</p>
+        <p>CPU: Ryzen 5 3600</p>
+      </div>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product">
+      <div class="product-inner">
+        <a href="seraph.html">
+          <img src="Seraph.png" alt="Seraph Gaming PC">
+          <h2>Seraph</h2>
+        </a>
+        <p>$749</p>
+        <p>GPU: RX 6600</p>
+        <p>CPU: Ryzen 5 5500</p>
+      </div>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product">
+      <div class="product-inner">
+        <a href="orsted.html">
+          <img src="MyPc.png" alt="Orsted Gaming PC">
+          <h2>Orsted</h2>
+        </a>
+        <p>$899</p>
+        <p>GPU: RTX 4060</p>
+        <p>CPU: Ryzen 5 5600</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <a href="warranty.html">Warranty</a>
+    <a href="returns.html">Refunds/Returns</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </footer>
+
+</body>
+
+</html>

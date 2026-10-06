@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>MudaPcs - Tracking</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body {
+  font-family: "Montserrat", sans-serif;
+  background:#2f2f2f;
+  color:#e0f0ff;
+  margin:0;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+
+nav {
+  width:100vw;
+  background-color:#3d5a80;
+  padding:15px 0;
+  box-shadow:0 0 10px #2b3d52cc;
+  box-sizing:border-box;
+}
+
+.nav-container {
+  max-width:1200px;
+  margin:0 auto;
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  gap:40px;
+  padding:0 20px;
+}
+
+.nav-container a {
+  color:#dbeeff;
+  text-decoration:none;
+  font-size:16px;
+  font-weight:600;
+  transition:color 0.3s ease;
+}
+
+.nav-container a:hover {
+  color:#ffffff;
+}
+
+.logo {
+  font-weight:700;
+  font-size:32px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#ffffff;
+  text-decoration:none;
+}
+
+.content {
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  max-width:600px;
+  margin:0 auto;
+  padding:0 20px;
+  text-align:center;
+}
+
+form input {
+  width:100%;
+  padding:12px;
+  margin:10px 0;
+  border-radius:8px;
+  border:none;
+  font-size:16px;
+}
+
+form button {
+  padding:12px 20px;
+  border:none;
+  border-radius:8px;
+  background:#2f2f2f;
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+
+form button:hover { background:#1f1f1f; }
+
+#order-status, #tracking-link {
+  margin-top:20px;
+  font-size:18px;
+  opacity:0;
+  transition: opacity 0.5s ease;
+}
+
+#tracking-link { font-size:16px; }
+#tracking-link a { color:#00bfff; text-decoration:underline; }
+
+footer {
+  width:100vw;
+  background-color:#3d5a80;
+  padding:15px 0;
+  color:#e0f0ff;
+  text-align:center;
+  box-shadow:0 0 10px #2b3d52cc;
+  box-sizing:border-box;
+}
+
+footer a {
+  margin:0 10px;
+  color:#dbeeff;
+  text-decoration:none;
+  font-size:14px;
+  font-weight:600;
+  transition:color 0.3s ease;
+}
+
+footer a:hover {
+  color:#ffffff;
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <a href="gamingpcs.html">GamingPcs</a>
+    <a href="about.html">About</a>
+    <a href="index.html" class="logo">Muda Pcs</a>
+    <a href="contact.html">Contact</a>
+    <a href="tracking.html">Tracking</a>
+  </div>
+</nav>
+
+<div class="content">
+<h1>Track Your Package</h1>
+<p>Enter your UPS tracking number below to see live updates.</p>
+<form id="trackForm">
+<input type="text" id="trackingNumber" placeholder="Enter your tracking number" required>
+<button type="submit">Track Package</button>
+</form>
+
+<div id="order-status"></div>
+<div id="tracking-link"></div>
+</div>
+
+<footer>
+<a href="warranty.html">Warranty</a>
+<a href="returns.html">Refunds/Returns</a>
+<a href="privacy.html">Privacy Policy</a>
+<a href="terms.html">Terms of Service</a>
+</footer>
+
+<script>
+document.getElementById('trackForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const tn = document.getElementById('trackingNumber').value.trim();
+  if(tn === '') return;
+
+  const statusDiv = document.getElementById('order-status');
+  statusDiv.textContent = '✈️ 📦 Your package is on the way';
+  statusDiv.style.opacity = 0;
+  setTimeout(() => statusDiv.style.opacity = 1, 50);
+
+  const linkDiv = document.getElementById('tracking-link');
+  linkDiv.innerHTML = `<a href="https://www.ups.com/track?tracknum=${encodeURIComponent(tn)}" target="_blank">Track Package #${tn} on UPS</a>`;
+  linkDiv.style.opacity = 0;
+  setTimeout(() => linkDiv.style.opacity = 1, 100);
+});
+</script>
+
+</body>
+</html>
