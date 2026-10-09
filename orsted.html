@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Eldia | MudaPcs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #2f2f2f; /* Dark Gray */
+      color: #e0f0ff; /* Light Blue-Gray Text */
+      font-family: "Montserrat", sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    nav {
+      background-color: #3d5a80; /* Medium Blue */
+      padding: 15px 30px;
+      box-shadow: 0 0 10px #2b3d52cc;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-around;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .nav-container a {
+      color: #dbeeff; /* Light Blue */
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-container a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 32px;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    .product-detail {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      padding: 40px;
+      flex: 1;
+      align-items: flex-start;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+
+    .product-top-row {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      width: 100%;
+    }
+
+    .product-images {
+      max-width: 500px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+
+    .slider {
+      display: flex;
+      width: 100%;
+      transition: transform 0.5s ease;
+    }
+
+    .main-image {
+      width: 100%;
+      border-radius: 10px;
+      flex-shrink: 0;
+      background: #111;
+    }
+
+    .arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 30px;
+      color: #dbeeff; /* Light Blue */
+      background: rgba(61, 90, 128, 0.6); /* medium blue transparent */
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      cursor: pointer;
+      user-select: none;
+      z-index: 10;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .arrow:hover {
+      background: #dbeeff; /* Light Blue */
+      color: #2f2f2f; /* dark gray */
+    }
+
+    .arrow-left {
+      left: 10px;
+    }
+
+    .arrow-right {
+      right: 10px;
+    }
+
+    .image-counter {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(61, 90, 128, 0.7); /* medium blue transparent */
+      padding: 5px 10px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: bold;
+      font-family: monospace;
+      color: #dbeeff; /* Light Blue */
+      z-index: 15;
+    }
+
+    .product-info {
+      max-width: 400px;
+      max-height: auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    .product-info h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .product-info p {
+      font-size: 16px;
+      margin-bottom: 8px;
+      color: #c9e4ff;
+    }
+
+    .specs {
+      background-color: #3b3b3b; /* Darker Gray Box */
+      padding: 1px 15px;
+      border-radius: 10px;
+      margin-top: 20px;
+      color: #c9e4ff;
+    }
+
+    .specs h3 {
+      margin-top: 2px;
+      margin-bottom: 6px;
+      color: #dbeeff;
+    }
+
+    .benchmarks {
+      display: flex;
+      align-items: flex-start;
+      margin-top: 20px;
+      gap: 40px;
+      padding: 0 20px;
+    }
+
+    .benchmark-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .benchmark-item .fps {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #c9e4ff;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .benchmarks-info {
+      flex-shrink: 0;
+      width: 140px;
+    }
+
+    .benchmarks-info h3 {
+      margin: 0 0 6px 0;
+      font-size: 20px;
+      color: #dbeeff;
+    }
+
+    .benchmarks-info p {
+      margin: 0;
+      font-size: 14px;
+      color: #c9e4ff;
+    }
+
+    .benchmarks-images {
+      flex-grow: 1;
+      display: flex;
+      gap: 30px;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+    }
+
+    .benchmarks-images img {
+      width: 160px;
+      height: auto;
+      border-radius: 10px;
+      object-fit: contain;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .benchmarks-images img:hover {
+      transform: scale(1.1);
+    }
+
+    footer {
+      background-color: #3d5a80; /* Medium Blue */
+      padding: 15px 20px;
+      text-align: center;
+      margin-top: auto;
+      box-shadow: 0 0 10px #2b3d52cc;
+    }
+
+    footer a {
+      margin: 0 10px;
+      color: #dbeeff; /* Light Blue */
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="nav-container">
+      <a href="gamingpcs.html">GamingPcs</a>
+      <a href="about.html">About</a>
+      <a href="index.html" class="logo">Muda Pcs</a>
+      <a href="contact.html">Contact</a>
+      <a href="tracking.html">Tracking</a>
+    </div>
+  </nav>
+
+  <div class="product-detail">
+    <div class="product-top-row">
+      <div class="product-images">
+        <span class="arrow arrow-left" onclick="prevImage()">&#10094;</span>
+        <div class="slider" id="slider">
+          <img class="main-image" src="green3.png" alt="Image 1" />
+          <img class="main-image" src="green2.png" alt="Image 2" />
+          <img class="main-image" src="green1.png" alt="Image 3" />
+        </div>
+        <span class="arrow arrow-right" onclick="nextImage()">&#10095;</span>
+        <div class="image-counter" id="imageCounter">1 / 3</div>
+      </div>
+
+      <div class="product-info">
+        <h1>Eldia</h1>
+        <p><strong>Price:</strong> $1599 USD</p>
+        <p>The Eldia is crafted to handle any game, any setting. Whether your looking for high-end 1440p gaming, or entry level 4k, this PC does it all.</p>
+
+        <div class="specs">
+          <h3>Specs:</h3>
+          <p><strong>GRAPHICS CARD:</strong> NVIDIA RTX 5070</p>
+          <p><strong>PROCESSOR:</strong> AMD Ryzen 7 7800X3D</p>
+          <p><strong>MEMORY:</strong> 32GB DDR5 (Dual Channel)</p>
+          <p><strong>STORAGE:</strong> 2TB GEN4 NVME SSD</p>
+          <p><strong>COOLING:</strong> OLED 360MM AIO</p>
+          <p><strong>POWER SUPPLY:</strong> 850W 80+GOLD</p>
+          <p><strong>MOTHERBOARD:</strong> X870</p>
+          <p><strong>CHASSIS:</strong> LIAN LI 011 VISION COMPACT</p>
+          <p><strong>OPERATING SYSTEM:</strong> Microsoft Windows 11 Home</p>
+          <p><strong>*This computer features used and/or refurbished parts such as the case and graphics card*</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="benchmarks">
+      <div class="benchmarks-info">
+        <h3>Benchmarks</h3>
+        <p>Tested at 1440p competitive settings</p>
+      </div>
+
+      <div class="benchmarks-images">
+        <div class="benchmark-item">
+          <img src="Fortnite.png" alt="Fortnite" />
+          <p class="fps">420 FPS</p>
+        </div>
+        <div class="benchmark-item">
+          <img src="Codwarzone2.png" alt="COD Warzone 2" />
+          <p class="fps">300 FPS</p>
+        </div>
+        <div class="benchmark-item">
+          <img src="Valorant.png" alt="Valorant" />
+          <p class="fps">500 FPS</p>
+        </div>
+        <div class="benchmark-item">
+          <img src="Cyberpunk2077.png" alt="Cyberpunk 2077" />
+          <p class="fps">180 FPS</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <a href="warranty.html">Warranty</a>
+    <a href="returns.html">Refunds/Returns</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </footer>
+
+  <script>
+    const slider = document.getElementById("slider");
+    const imageCounter = document.getElementById("imageCounter");
+    const totalImages = slider.children.length;
+    let currentIndex = 0;
+
+    function updateSlider() {
+      slider.style.transform = `translateX(-${currentIndex * 100}%)`;
+      imageCounter.textContent = `${currentIndex + 1} / ${totalImages}`;
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % totalImages;
+      updateSlider();
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+      updateSlider();
+    }
+
+    updateSlider();
+  </script>
+</body>
+</html>

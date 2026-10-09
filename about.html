@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | MudaPcs</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #2f2f2f;
+      color: #e0f0ff;
+      font-family: "Montserrat", sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      background-color: #3d5a80;
+      padding: 15px 30px;
+      box-shadow: 0 0 10px #2b3d52cc;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-around;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .nav-container a {
+      color: #dbeeff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-container a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 32px;
+      text-transform: uppercase;
+      color: #ffffff;
+    }
+
+    /* MAIN CONTENT */
+
+    .about-container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-bottom: 60px;
+      flex: 1;
+    }
+
+    /* HERO */
+
+    .hero {
+      text-align: center;
+      padding: 75px 20px 65px;
+    }
+
+    .hero h1 {
+      color: #ffffff;
+      font-size: 52px;
+      margin: 0 0 20px;
+      font-weight: 700;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: #c9e4ff;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .hero-button {
+      display: inline-block;
+      background-color: #3d5a80;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 13px 28px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 700;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .hero-button:hover {
+      background-color: #4d6f99;
+      transform: translateY(-2px);
+    }
+
+    /* SECTION TITLES */
+
+    .section-title {
+      text-align: center;
+      color: #ffffff;
+      font-size: 30px;
+      margin: 10px 0 30px;
+    }
+
+    /* PC SHOWCASE */
+
+    .showcase {
+      margin-bottom: 60px;
+    }
+
+    .pc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .pc-card {
+      background-color: #3b3b3b;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .pc-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .pc-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      display: block;
+      background-color: #222222;
+    }
+
+    .pc-card-content {
+      padding: 20px;
+    }
+
+    .pc-card h3 {
+      color: #ffffff;
+      margin: 0 0 8px;
+      font-size: 21px;
+    }
+
+    .pc-card p {
+      color: #c9e4ff;
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* TEXT SECTIONS */
+
+    .about-section {
+      background-color: #3b3b3b;
+      padding: 30px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+    }
+
+    .about-section h2 {
+      color: #dbeeff;
+      margin-top: 0;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    .about-section p {
+      color: #c9e4ff;
+      font-size: 16px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .about-section ul {
+      color: #c9e4ff;
+      line-height: 1.8;
+      padding-left: 25px;
+      margin-bottom: 0;
+    }
+
+    .about-section li {
+      margin-bottom: 8px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background-color: #3d5a80;
+      padding: 15px 20px;
+      text-align: center;
+      margin-top: auto;
+      box-shadow: 0 0 10px #2b3d52cc;
+    }
+
+    footer a {
+      margin: 0 10px;
+      color: #dbeeff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+      .pc-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .nav-container {
+        gap: 15px;
+      }
+
+      .nav-container a {
+        font-size: 13px;
+      }
+
+      .logo {
+        font-size: 22px;
+      }
+
+      .hero {
+        padding: 50px 15px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .pc-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-section {
+        padding: 22px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <nav>
+    <div class="nav-container">
+      <a href="gamingpcs.html">GamingPcs</a>
+      <a href="about.html">About</a>
+      <a href="index.html" class="logo">Muda Pcs</a>
+      <a href="contact.html">Contact</a>
+      <a href="tracking.html">Tracking</a>
+    </div>
+  </nav>
+
+  <main class="about-container">
+
+<!-- HERO -->
+
+<section class="hero">
+
+  <h1>Built for Gaming. Built for You.</h1>
+
+  <p>
+    MudaPcs is dedicated to building gaming PCs that deliver strong
+    performance without unnecessary costs. Every system is built with
+    performance, value, and the gaming experience in mind.
+  </p>
+
+  <a href="gamingpcs.html" class="hero-button">
+    View Gaming PCs
+  </a>
+
+</section>
+
+
+<!-- PC SHOWCASE -->
+
+<section class="showcase">
+
+  <h2 class="section-title">PC Showcase</h2>
+
+  <div class="pc-grid">
+
+    <div class="pc-card">
+      <img src="IMG_7701partswap.jpg" alt="Gaming PC">
+
+      <div class="pc-card-content">
+        <h3>Cursed Energy</h3>
+        <p>
+          A high-performance system featuring the Rtx 5070Ti, Ryzen 7 7800x3d, 32gb Ddr5 Ram, 360mm liquid cooling, and a customizable screen.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="pc-card">
+      <img src="IMG_1187 (3)white.jpg" alt="Seraph Gaming PC">
+
+      <div class="pc-card-content">
+        <h3>Seraph</h3>
+        <p>
+          A mid-range system in white, featuring the Rx 9060xt 16gb, Ryzen 5 7500f, 32gb Ddr5 Ram, and white cable extensions creating a cohesive aesthetic.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="pc-card">
+      <img src="IMG_7779blue.jpg" alt="Custom Gaming PC">
+
+      <div class="pc-card-content">
+        <h3>Client Custom Build</h3>
+        <p>
+          A high-performance system featuring the Rtx 5080, Ryzen 9 9800x3d, 64gb Ddr5 Ram, 360mm liquid cooling, and enclosed in a dual-chambered case.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- WHO WE ARE -->
+
+<section class="about-section">
+
+  <h2>Who We Are</h2>
+
+  <p>
+    MudaPcs focuses on providing affordable gaming PCs built with
+    carefully selected components. Our goal is to make high-performance
+    gaming computers more accessible without requiring customers to
+    spend a fortune.
+  </p>
+
+</section>
+
+
+<!-- OUR APPROACH -->
+
+<section class="about-section">
+
+  <h2>Our Approach</h2>
+
+  <p>
+    We focus on creating balanced systems where the hardware works
+    together to deliver the performance gamers actually need. Rather
+    than simply choosing the most expensive components, we prioritize
+    getting the most gaming performance possible for the budget.
+  </p>
+
+  <ul>
+    <li>Performance-focused component selection</li>
+    <li>Balanced systems designed around the user's budget</li>
+    <li>Clear and straightforward product specifications</li>
+    <li>Gaming performance based on real-world use</li>
+    <li>Support before and after your purchase</li>
+  </ul>
+
+</section>
+
+<!-- WHY MUDAPCS -->
+
+<section class="about-section">
+
+  <h2>Why MudaPcs?</h2>
+
+  <p>
+    Whether you're looking for your first gaming PC or upgrading to
+    a more powerful system, MudaPcs is built around one simple idea:
+    getting the best gaming experience possible for your money.
+  </p>
+
+</section>
+
+  </main>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <a href="warranty.html">Warranty</a>
+    <a href="returns.html">Refunds/Returns</a>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Service</a>
+  </footer>
+
+</body>
+</html>

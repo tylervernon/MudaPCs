@@ -3,43 +3,38 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MudaPcs</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: "Montserrat", sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #2f2f2f; /* Dark Gray */
-      color: #e0f0ff; /* Light Blue-Gray Text */
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    h1 {
+      background-color: #2f2f2f;
       color: #ffffff;
-      font-weight: 700;
-      margin-bottom: 15px;
     }
 
-    p {
-      font-size: 18px;
-      color: #c9e4ff; /* Soft Blue-Gray Text */
-      line-height: 1.5;
-    }
+    /* NAVIGATION */
 
-    /* Navigation Bar Full Width */
     nav {
-      width: 100vw;
-      background-color: #3d5a80; /* Medium Blue */
+      width: 100%;
+      background-color: #3d5a80;
       padding: 15px 0;
-      box-shadow: 0 0 10px #2b3d52cc;
-      box-sizing: border-box;
+      box-shadow: 0 0 10px #1f2933;
     }
 
     .nav-container {
-      max-width: 1200px; /* content stays centered */
+      max-width: 1200px;
       margin: 0 auto;
       display: flex;
       justify-content: space-around;
@@ -53,7 +48,7 @@
       text-decoration: none;
       font-size: 16px;
       font-weight: 600;
-      transition: color 0.3s ease;
+      transition: 0.3s ease;
     }
 
     .nav-container a:hover {
@@ -61,31 +56,213 @@
     }
 
     .logo {
-      font-weight: 700;
+      font-weight: 800;
       font-size: 32px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      color: #ffffff;
-      text-decoration: none;
+      color: #ffffff !important;
     }
 
-    /* Main content */
-    .content {
-      flex-grow: 1;
-      max-width: 1200px;
-      margin: 30px auto;
-      padding: 0 20px;
-    }
+    /* HERO */
 
-    /* Footer Full Width */
-    footer {
-      width: 100vw;
-      background-color: #3d5a80;
-      padding: 15px 0;
-      color: #e0f0ff;
+    .hero {
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      box-shadow: 0 0 10px #2b3d52cc;
-      box-sizing: border-box;
+      padding: 80px 20px;
+      background:
+        radial-gradient(circle at center, #40566f 0%, #2f2f2f 65%);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 1.08;
+      margin: 0 0 25px;
+      font-weight: 800;
+    }
+
+    .hero h1 span {
+      color: #9fc5e8;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: 0 auto 35px;
+      color: #c9e4ff;
+      font-size: 19px;
+      line-height: 1.7;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 15px 30px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.25s ease;
+    }
+
+    .primary-button {
+      background-color: #3d5a80;
+      color: #ffffff;
+    }
+
+    .primary-button:hover {
+      background-color: #526f94;
+      transform: translateY(-2px);
+    }
+
+    /* FEATURED PCs */
+
+    .products {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 85px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 38px;
+      margin: 0 0 12px;
+      font-weight: 800;
+    }
+
+    .section-description {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 50px;
+      color: #c9e4ff;
+      line-height: 1.7;
+    }
+
+    .pc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .pc-card {
+      background-color: #383838;
+      border: 1px solid #4a4a4a;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: 0.25s ease;
+    }
+
+    .pc-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .pc-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+      background-color: #262626;
+    }
+
+    .pc-info {
+      padding: 25px;
+    }
+
+    .pc-info h3 {
+      margin: 0 0 8px;
+      font-size: 25px;
+    }
+
+    .pc-info p {
+      margin: 0 0 20px;
+      color: #c9e4ff;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .price {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    /* VALUE SECTION */
+
+    .value-section {
+      background-color: #292929;
+      padding: 85px 20px;
+    }
+
+    .value-container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .value-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-top: 45px;
+    }
+
+    .value-card {
+      text-align: center;
+      padding: 30px 25px;
+      background-color: #343434;
+      border-radius: 10px;
+      border: 1px solid #474747;
+    }
+
+    .value-card h3 {
+      font-size: 21px;
+      margin: 0 0 12px;
+    }
+
+    .value-card p {
+      color: #c9e4ff;
+      font-size: 15px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .number {
+      color: #9fc5e8;
+      font-size: 32px;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    .cta h2 {
+      font-size: 42px;
+      margin: 0 0 15px;
+      font-weight: 800;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: #c9e4ff;
+      line-height: 1.7;
+    }
+
+    /* FOOTER */
+
+    footer {
+      width: 100%;
+      background-color: #3d5a80;
+      padding: 25px 20px;
+      text-align: center;
     }
 
     footer a {
@@ -94,40 +271,350 @@
       text-decoration: none;
       font-size: 14px;
       font-weight: 600;
-      transition: color 0.3s ease;
     }
 
     footer a:hover {
       color: #ffffff;
+    }
+
+    .copyright {
+      margin-top: 15px;
+      color: #c4d9ed;
+      font-size: 13px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .pc-grid,
+      .value-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-container {
+        gap: 15px;
+      }
+
+      .nav-container a {
+        font-size: 13px;
+      }
+
+      .logo {
+        font-size: 24px;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .nav-container {
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .section-title {
+        font-size: 30px;
+      }
+
+      .cta h2 {
+        font-size: 32px;
+      }
+
+      footer a {
+        display: inline-block;
+        margin: 6px 8px;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- NAVIGATION -->
+
   <nav>
     <div class="nav-container">
+
       <a href="gamingpcs.html">GamingPcs</a>
+
       <a href="about.html">About</a>
+
       <a href="index.html" class="logo">Muda Pcs</a>
+
       <a href="contact.html">Contact</a>
+
       <a href="tracking.html">Tracking</a>
+
     </div>
   </nav>
 
-  <!-- Main Content -->
-  <div class="content">
-    <h1>Price to Performance + Aesthetics = Your Next PC</h1>
-    <p>Blah blah blah</p>
-  </div>
 
-  <!-- Footer -->
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <h1>
+        Your Next PC Starts <span>Here.</span>
+      </h1>
+
+      <p>
+        Gaming PCs built around the things that matter:
+        performance, value, and aesthetics.
+      </p>
+
+      <a href="gamingpcs.html" class="button primary-button">
+        Shop Gaming PCs
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- FEATURED PCs -->
+
+  <section class="products">
+
+    <h2 class="section-title">
+      Featured PCs
+    </h2>
+
+    <p class="section-description">
+      Explore some of the gaming PCs available from MudaPcs.
+      Each system is built with a balance of performance,
+      price, and appearance.
+    </p>
+
+    <div class="pc-grid">
+
+
+      <!-- SHRINE -->
+
+      <div class="pc-card">
+
+        <img
+          src="Red1.jpg"
+          alt="Shrine Gaming PC"
+        />
+
+        <div class="pc-info">
+
+          <h3>Shrine</h3>
+
+          <div class="price">
+            $499
+          </div>
+
+          <a
+            href="gamingpcs.html"
+            class="button primary-button"
+          >
+            View PC
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- LIMITLESS -->
+
+      <div class="pc-card">
+
+        <img
+          src="Seraph.png"
+          alt="Limitless Gaming PC"
+        />
+
+        <div class="pc-info">
+
+          <h3>Limitless</h3>
+
+          <div class="price">
+            $999
+          </div>
+
+          <a
+            href="gamingpcs.html"
+            class="button primary-button"
+          >
+            View PC
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- ELDIA -->
+
+      <div class="pc-card">
+
+        <img
+          src="green1.png"
+          alt="Eldia Gaming PC"
+        />
+
+        <div class="pc-info">
+
+          <h3>Eldia</h3>
+
+          <div class="price">
+            $1599
+          </div>
+
+          <a
+            href="gamingpcs.html"
+            class="button primary-button"
+          >
+            View PC
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- VALUE -->
+
+  <section class="value-section">
+
+    <div class="value-container">
+
+      <h2 class="section-title">
+        What Matters
+      </h2>
+
+      <p class="section-description">
+        MudaPcs focuses on getting the most out of every dollar
+        without overlooking how the finished PC looks.
+      </p>
+
+      <div class="value-grid">
+
+        <div class="value-card">
+
+          <div class="number">
+            01
+          </div>
+
+          <h3>Performance</h3>
+
+          <p>
+            Hardware selected with real-world gaming
+            performance in mind.
+          </p>
+
+        </div>
+
+
+        <div class="value-card">
+
+          <div class="number">
+            02
+          </div>
+
+          <h3>Value</h3>
+
+          <p>
+            Competitive systems designed to give you
+            more performance for your budget.
+          </p>
+
+        </div>
+
+
+        <div class="value-card">
+
+          <div class="number">
+            03
+          </div>
+
+          <h3>Aesthetics</h3>
+
+          <p>
+            A gaming PC should look as good as it
+            performs.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CTA -->
+
+  <section class="cta">
+
+    <h2>
+      Find Your Next Gaming PC
+    </h2>
+
+    <p>
+      Browse the available MudaPcs systems and find the
+      setup that fits your budget and gaming needs.
+    </p>
+
+    <a
+      href="gamingpcs.html"
+      class="button primary-button"
+    >
+      Browse Gaming PCs
+    </a>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
   <footer>
-    <a href="warranty.html">Warranty</a>
-    <a href="returns.html">Refunds/Returns</a>
-    <a href="privacy.html">Privacy Policy</a>
-    <a href="terms.html">Terms of Service</a>
+
+    <div>
+
+      <a href="warranty.html">
+        Warranty
+      </a>
+
+      <a href="returns.html">
+        Refunds/Returns
+      </a>
+
+      <a href="privacy.html">
+        Privacy Policy
+      </a>
+
+      <a href="terms.html">
+        Terms of Service
+      </a>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 MudaPcs. All rights reserved.
+    </div>
+
   </footer>
 
 </body>
